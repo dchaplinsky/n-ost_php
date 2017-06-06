@@ -1,0 +1,79 @@
+/*
+  Icon Font: nost-icons
+*/
+
+@font-face {
+  font-family: "nost-icons";
+  src: url("../fonts/nost_icons/nost-icons_9e3243d4e7ed4286e6007c2f3a687ba9.eot");
+  src: url("../fonts/nost_icons/nost-icons_9e3243d4e7ed4286e6007c2f3a687ba9.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/nost_icons/nost-icons_9e3243d4e7ed4286e6007c2f3a687ba9.woff") format("woff"),
+       url("../fonts/nost_icons/nost-icons_9e3243d4e7ed4286e6007c2f3a687ba9.ttf") format("truetype"),
+       url("../fonts/nost_icons/nost-icons_9e3243d4e7ed4286e6007c2f3a687ba9.svg#nost-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "nost-icons";
+    src: url("../fonts/nost_icons/nost-icons_9e3243d4e7ed4286e6007c2f3a687ba9.svg#nost-icons") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.nost-icon-calendar:before,
+.nost-icon-close:before,
+.nost-icon-download:before,
+.nost-icon-external_link:before,
+.nost-icon-external_link_small:before,
+.nost-icon-facebook:before,
+.nost-icon-location:before,
+.nost-icon-login:before,
+.nost-icon-mitglieder:before,
+.nost-icon-money:before,
+.nost-icon-newsletter:before,
+.nost-icon-pdf:before,
+.nost-icon-pfeil_filter:before,
+.nost-icon-pfeil_imagegallery:before,
+.nost-icon-pfeil_lang:before,
+.nost-icon-plus:before,
+.nost-icon-search:before,
+.nost-icon-time:before,
+.nost-icon-twitter:before,
+.nost-icon-vimeo:before {
+  display: inline-block;
+  font-family: "nost-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.nost-icon-calendar:before { content: "\f100"; }
+.nost-icon-close:before { content: "\f101"; }
+.nost-icon-download:before { content: "\f102"; }
+.nost-icon-external_link:before { content: "\f103"; }
+.nost-icon-external_link_small:before { content: "\f104"; }
+.nost-icon-facebook:before { content: "\f105"; }
+.nost-icon-location:before { content: "\f106"; }
+.nost-icon-login:before { content: "\f107"; }
+.nost-icon-mitglieder:before { content: "\f108"; }
+.nost-icon-money:before { content: "\f109"; }
+.nost-icon-newsletter:before { content: "\f10a"; }
+.nost-icon-pdf:before { content: "\f10b"; }
+.nost-icon-pfeil_filter:before { content: "\f10c"; }
+.nost-icon-pfeil_imagegallery:before { content: "\f10d"; }
+.nost-icon-pfeil_lang:before { content: "\f10e"; }
+.nost-icon-plus:before { content: "\f10f"; }
+.nost-icon-search:before { content: "\f110"; }
+.nost-icon-time:before { content: "\f111"; }
+.nost-icon-twitter:before { content: "\f112"; }
+.nost-icon-vimeo:before { content: "\f113"; }

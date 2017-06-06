@@ -1,0 +1,43 @@
+<div class="col">
+    <form class="form-inline">
+        <input type="text" name="term" placeholder="{% if lang == "en" %}Search registries{% else %}Найти реестры{% endif %}" pattern=".*" required="required" id="registry_search"/>
+        <!-- <button title="Search"><i class="nost-icon nost-icon-search"></i></button> -->
+    </form>
+    <!-- contacts-filter-list -->
+    <table id="registry" class="display" width="100%" cellspacing="0" data-lang="{{ lang }}">
+        <thead>
+            <tr>
+                <th>{% if lang == "en" %}Country{% else %}Страна{% endif %}</th>
+                <th>{% if lang == "en" %}Sector{% else %}Сектор{% endif %}</th>
+                <th>{% if lang == "en" %}Title{% else %}Название{% endif %}</th>
+                <th style="text-align: left">{% if lang == "en" %}Paid{% else %}Платность{% endif %}</th>
+                <th style="text-align: left">{% if lang == "en" %}Status{% else %}Статус{% endif %}</th>
+                <th>{% if lang == "en" %}Comment{% else %}Комментарий{% endif %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registry in registries %}
+            <tr>
+                <td>
+                    {{ registry.country }}
+                </td>
+                <td>
+                    {{ registry.sector }}
+                </td>
+                <td>
+                    <a href="{{ registry.link }}" target="_blank">{{ registry.title }}</a>
+                </td>
+                <td>
+                    {{ registry.paid }}
+                </td>
+                <td>
+                    {{ registry.official }}
+                </td>
+                <td>
+                    {{ registry.comments or "" }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

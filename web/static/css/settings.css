@@ -1,0 +1,45 @@
+.dataTable th {
+    vertical-align: top;
+}
+
+#registry_wrapper {
+    margin-bottom: 20px;
+}
+
+#registry_filter {
+    display: none;
+}
+
+.filler {
+    height: 20px;
+}
+
+.contentbox.sub-footer .menu-3 .col {
+    background: white;
+}
+
+.contentbox.sub-footer .menu-3 .content a {
+    height: auto;
+    padding: 15px;
+    background: white;
+}
+
+.contentbox.sub-footer .menu-3 .content a img {
+    max-height: 95px;
+}
+
+.hero-slogan p {
+	color: white;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px;
+}
+
+.chosen-results {
+    text-align: left;
+}
+
+#reg-description {
+    padding-top: 20px;
+}

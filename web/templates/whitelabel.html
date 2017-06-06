@@ -1,0 +1,27 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url('static', filename='css/build.min.css') }}" />
+    <link rel="stylesheet" href="{{ url('static', filename='css/gridly.min.css') }}" />
+    <link rel="stylesheet" href="{{ url('static', filename='css/nost-icons.css') }}" />
+    <link rel="stylesheet" href="{{ url('static', filename='css/datatables.min.css') }}" />
+    <link rel="stylesheet" href="{{ url('static', filename='css/settings.css') }}" />
+
+    <script src="{{ url('static', filename='js/modernizr-3.2.0.base.js') }}"></script>
+
+</head>
+<body>
+    {% include "table.html" %}
+
+    <script src="{{ url('static', filename='js/jquery-1.11.3.min.js') }}"></script>
+    <script src="{{ url('static', filename='js/build.min.js') }}"></script>
+    <script src="{{ url('static', filename='js/datatables.min.js') }}"></script>
+    <script src="{{ url('static', filename='js/init.js') }}"></script>
+</body>
+</html>
