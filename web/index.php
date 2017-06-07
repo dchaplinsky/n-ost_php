@@ -3,6 +3,7 @@
     require_once __DIR__.'/../settings.php';
     require_once __DIR__.'/../models.php';
     use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Component\HttpFoundation\Response;
 
 
     $app = new Silex\Application();
@@ -11,6 +12,12 @@
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         'twig.path' => __DIR__.'/templates',
     ));
+
+    $app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
+        'http_cache.cache_dir' => __DIR__.'/cache/',
+    ));
+
+    Request::setTrustedProxies(array('127.0.0.1'));
 
     $app->extend('twig', function($twig, $app) {
         $function = new Twig_SimpleFunction('url', function ($scope, $filename) {
@@ -28,28 +35,41 @@
         }
     }
 
-    $app->get('/', function (Silex\Application $app, Request $request) {
+    function _get_lang(Request $request) {
         $lang = $request->query->get("lang", "en");
-        $model = get_model($lang);
+        if (!in_array($lang, array("en", "ru"))) {
+            $lang = "en";
+        }
+        return $lang;        
+    }
 
-        return $app['twig']->render('base.html', array(
+    function _render_response($template, Silex\Application $app, Request $request) {
+        $lang = _get_lang($request);
+        $model = get_model($lang);
+        
+
+        $content = $app['twig']->render($template, array(
             "registries"=>$model,
-            "lang"=>$lang,  # TODO: Sanitize
+            "lang"=>$lang,
         ));
+
+        $response = new Response($content);
+        $response->setTtl(CACHE_TIME);
+        $response->setClientTtl(CACHE_TIME);
+        return $response;
+    }
+
+    $app->get('/', function (Silex\Application $app, Request $request) {
+        return _render_response("base.html", $app, $request);
     });
 
     $app->get('/wl', function (Silex\Application $app, Request $request) {
-        $lang = $request->query->get("lang", "en");
-        $model = get_model($lang);
-
-        return $app['twig']->render('table.html', array(
-            "registries"=>$model,
-            "lang"=>$lang,  # TODO: Sanitize
-        ));
+        return _render_response("table.html", $app, $request);
     });
 
     $app->get('/api', function (Silex\Application $app, Request $request) {
-        return $app->json(get_model($request->query->get("lang", "en")));
+        $lang = _get_lang($request);
+        return $app->json(get_model($lang));
     });
 
-    $app->run();
+    $app['http_cache']->run();
