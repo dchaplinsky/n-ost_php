@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    $("#jsContacts").magnificPopup(
+        {
+            type: 'inline'
+        }
+    );
+
     function escapeRegExp(str) {
         return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
     }

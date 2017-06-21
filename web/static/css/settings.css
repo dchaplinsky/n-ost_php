@@ -43,3 +43,16 @@ table.dataTable thead th, table.dataTable thead td {
 #reg-description {
     padding-top: 20px;
 }
+
+.white-popup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.white-popup div.input {
+    margin-bottom: 10px;
+}
