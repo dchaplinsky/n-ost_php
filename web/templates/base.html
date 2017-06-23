@@ -7,49 +7,31 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Network - n-ost</title>
-<!--     <meta name="author" content="n-ost" />
-    <meta name="title" content="Network" />
-    <meta name="description" content="Over 250 journalists and media activists from all over Europe come together in our Network. They combine vast knowledge of their respective countries with thematic expertise, journalistic professionalism and engagement. " />
-    <meta name="Copyright" content="n-ost, Berlin, 2016" />
--->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="{{ url('static', filename='favicon.ico') }}" type="image/x-icon" rel="icon"/><link href="{{ url('static', filename='favicon.ico') }}" type="image/x-icon" rel="shortcut icon"/>
-<link rel="stylesheet" href="{{ url('static', filename='css/build.min.css') }}" />
-<link rel="stylesheet" href="{{ url('static', filename='css/gridly.min.css') }}" />
-<link rel="stylesheet" href="{{ url('static', filename='css/nost-icons.css') }}" />
-<link rel="stylesheet" href="{{ url('static', filename='css/datatables.min.css') }}" />
-<link rel="stylesheet" href="{{ url('static', filename='css/chosen.min.css') }}" />
-<link rel="stylesheet" href="{{ url('static', filename='css/magnific-popup.css') }}" />
-<link rel="stylesheet" href="{{ url('static', filename='css/settings.css') }}" />
+    <title>Metabase - n-vestigate</title>
 
-<script src="{{ url('static', filename='js/modernizr-3.2.0.base.js') }}"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{{ url('static', filename='img/favicon.png') }}" type="image/x-icon" rel="icon"/><link href="{{ url('static', filename='img/favicon.png') }}" type="image/x-icon" rel="shortcut icon"/>
+	<link rel="stylesheet" href="{{ url('static', filename='css/build.css') }}" />
+	<link rel="stylesheet" href="{{ url('static', filename='css/gridly.min.css') }}" />
+	<link rel="stylesheet" href="{{ url('static', filename='css/nost-icons.css') }}" />
+	<link rel="stylesheet" href="{{ url('static', filename='css/datatables.min.css') }}" />
+	<link rel="stylesheet" href="{{ url('static', filename='css/chosen.min.css') }}" />
+	<link rel="stylesheet" href="{{ url('static', filename='css/magnific-popup.css') }}" />
+	<link rel="stylesheet" href="{{ url('static', filename='css/settings.css') }}" />
 
-{#    <!-- Twitter: see https://dev.twitter.com/docs/cards/types/summary-card for details -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@n_ost">
-    <meta name="twitter:title" content="Network">
-    <meta name="twitter:description" content="Over 250 journalists and media activists from all over Europe come together in our Network. They combine vast knowledge of their respective countries with thematic expertise, journalistic professionalism and engagement. ">
-    <meta name="twitter:url" content="http://www.n-ost.org/network">
-
-    <!-- Facebook (and some others) use the Open Graph protocol: see http://ogp.me/ for details -->
-    <meta property="og:title" content="Network" />
-    <meta property="og:description" content="Over 250 journalists and media activists from all over Europe come together in our Network. They combine vast knowledge of their respective countries with thematic expertise, journalistic professionalism and engagement. " />
-    <meta property="og:url" content="http://www.n-ost.org/network" />
-    <meta property="og:image" content="http://www.n-ost.org/img/gfx/n-ost_logo.png" />
-    #}
+	<script src="{{ url('static', filename='js/modernizr-3.2.0.base.js') }}"></script>
 
 </head>
 <body>
     <div class="wrapper">
-        <header class="contentbox header border-bottom">
+        <header class="contentbox header">
             <div class="row">
-                <a href="/"><img src="{{ url('static', filename='img/n-ost_logo.png') }}" alt="n-ost Logo" class="logo"/></a>
+                <a href="/"><img src="{{ url('static', filename='img/n-vestigate_logo.png') }}" alt="n-vestigate Logo" class="logo"/></a>
                 <a class="toogle-menu color-default align-center js-toggle-menu" href="#"><span>&#9776;</span></a>
                 <section class="lang-switch-user-box">
                     <div class="lang-switch align-center">
-                        {% if lang != "en" %}<a href="?lang=en" title="English">EN</a>{% else %} EN {% endif %} /
-                        {% if lang != "ru" %}<a href="?lang=ru" title="Russian">Ru</a>{% else %} Ru {% endif %}
+                        {% if lang != "en" %}<a href="?lang=en" title="English">EN</a>{% else %} EN {% endif %} 
+                        {% if lang != "ru" %}<a href="?lang=ru" title="Russian">RU</a>{% else %} RU {% endif %}
                     </div>
                 </section>
             </div>
@@ -60,24 +42,22 @@
                     <div class="col hero-slogan">
                         {# Poor's man i18n #}
                         {% if lang == "en" %}
+							<h1>n-vestigate Metabase</h1>
+							<img class="databaseimg" src="{{ url('static', filename='img/database-img-300x275.png') }}"" alt="" width="300" height="275" />
                             <p>
-                                You need data for your journalistic research? We show you where to find it!
-                            </p> 
-                            <p>
-                                n-vestigate metabase is a database of databases. It assembles over 150 links to different public registries, records and datasets across Eastern Europe and EU countries.
+                                <b>You need data for your journalistic research? We show you where to find it!</b> <br/>n-vestigate metabase is a database of databases. It assembles over 150 links to different public registries, records and datasets across Eastern Europe and EU countries.
                             </p>
                             <p>
-                                Metabase is provided by n-vestigate – an investigative network hosted by n-ost and four other research partners from Eastern Europe. Find out more about the network here!
+                                Metabase is provided by <b>n-vestigate</b> – an investigative network hosted by n-ost and four other research partners from Eastern Europe. Find out more about the network <a href="http://www.n-vestigate.net/" title="Link to n-vestigate website" target="_blank">here</a>!
                             </p>
                         {% else %}
+							<h1>n-vestigate Метабаза</h1>
+							<img class="databaseimg" src="{{ url('static', filename='img/database-img-300x275.png') }}"" alt="" width="300" height="275" />
                             <p>
-                                Вам нужны данные для  вашего журналистского расследования? Мы поможем вам их найти!
+                                <b>Вам нужны данные для  вашего журналистского расследования? Мы поможем вам их найти!</b> Метабаза n-vestigate - это коллекция баз данных. В ней собраны более 150 ссылок на различные публичные реестры, открытые данные и базы данных в странах Восточной Европы и Евросоюза.
                             </p>
                             <p>
-                                Метабаза n-vestigate - это коллекция баз данных. В ней собраны более 150 ссылок на различные публичные реестры, открытые данные и базы данных в странах Восточной Европы и Евросоюза.
-                            </p>
-                            <p>
-                                Метабаза создана n-vestigate – инвестигативным сообществом, возникшем из тесного сотрудничества n-ost с четырьмя партнёрами из Восточной Европы. Узнайте больше о проекте n-vestigate здесь!
+                                Метабаза создана <b>n-vestigate</b> – инвестигативным сообществом, возникшем из тесного сотрудничества n-ost с четырьмя партнёрами из Восточной Европы. Узнайте больше о проекте n-vestigate <a href="http://www.n-vestigate.net/" title="Link to n-vestigate website" target="_blank">здесь</a>!
                             </p>
                         {% endif %}
                     </div>
@@ -87,19 +67,15 @@
                 <!-- contentbox -->
                 <div class="contentbox bg-color-grey border-bottom" id="reg-description">
                     <div class="row">
-                        <div class="col">
+                        <div class="col info-text">
                             {% if lang == "en" %}
                                 <p>
-                                    n-vestigate metabase helps you to find &amp; access existing databases.
-                                </p> 
-                                <p>
+                                    <b>n-vestigate metabase helps you to find &amp; access existing databases.</b>
                                     Group entries by country and sector, or apply filters for accessibility (free/paid/partly free) and status (official/unofficial). If you need support with research in other languages, or you know a database that is missing here, please find our HELP button below. Our service is free of charge.
                                 </p>
                             {% else %}
                                 <p>
-                                    Метабаза n-vestigate поможет вам найти существующие базы данных и получить к ним доступ. 
-                                </p>
-                                <p>
+                                    <b>Метабаза n-vestigate поможет вам найти существующие базы данных и получить к ним доступ. </b>
                                     Сгруппируйте базы данных по стране и сектору, или воспользуйтесь фильтром по условиям доступа (бесплатный/ платный/ частично бесплатный). 
                                     Если вам нужна помощь с данными на иностранных языках или вам известны базы данных, которые пока еще отсутствуют в метабазе, пожалуйста, нажмите на кнопку ПОМОЩЬ внизу. Мы не взимаем платы за свои услуги.
                                 </p>
@@ -110,10 +86,12 @@
                         {% include "table.html" %}
                     </div>
                 </div>
-                <div class="row">
+				
+                <div class="help-button">
                     <div class="col align-center">
                         <!-- <div class="filler"></div> -->
-                        <a id="jsContacts" class="btn load-more" title="Help" href="#contactUsForm">Still need help?</a>
+                        <button id="jsContacts" class="btn load-more" title="Help" href="#contactUsForm">Still need help?</button>
+						
                         <div id="contactUsForm" class="mfp-hide white-popup">
                             <form method="post" accept-charset="utf-8" class="toggle-flyout active" action="/">
                                 <input type="hidden" name="_method" value="POST">
@@ -141,122 +119,65 @@
                                 <div><button>Submit</button></div>
                             </form>
                         </div>
+						
                     </div>
                 </div>
+			
             </div>
             <!-- /contentbox -->
 
         </article>
 
-        <!-- sub-footer -->
-        <div class="contentbox sub-footer border-bottom bg-color-grey-2">
-            <div class="row menu-3 text-uppercase">
-                <div class="col">
-                    <div class="content align-center">
-                        <a href="https://www.rise.md"><img src="{{ url('static', filename='img/rise_md.png') }}" /></a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="content align-center">
-                        <a href="https://irrp.org.ua/"><img src="{{ url('static', filename='img/yrrp.png') }}" /></a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="content align-center">
-                        <a href="https://hetq.am/eng/"><img src="{{ url('static', filename='img/hetq_am.png') }}" /></a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="content align-center">
-                        <a href="http://liberali.ge/"><img src="{{ url('static', filename='img/liberali_ge.png') }}" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="contentbox sub-footer border-bottom bg-color-grey-2 sub-menu-category">
-            <div class="row text-uppercase">
-                <div class="col">
-                    <div class="content">
-                        <h5><a href="http://n-ost.org/media-ngo" class="color-default">Media NGO</a></h5>
-
-                        <ul class="unstyled-list">
-                            <li><a href="http://n-ost.org/media-ngo#connecting-journalists" class="color-default">Connecting journalists</a></li>
-                            <li><a href="http://n-ost.org/media-ngo#supporting-research" class="color-default">Supporting research</a></li>
-                            <li><a href="http://n-ost.org/media-ngo#strengthening-investigative-journalism" class="color-default">Strengthening Investigative Journalism</a></li>
-                            <li><a href="http://n-ost.org/media-ngo#imparting-competency" class="color-default">Imparting Competency</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="content">
-                        <h5><a href="http://n-ost.org/agency" class="color-default">Agency</a></h5>
-
-                        <ul class="unstyled-list">
-                            <li><a href="http://n-ost.org/agency#the-editorial-team-for-foreign-reporting" class="color-default">The Editorial Team for Foreign Reporting</a></li>
-                            <li><a href="http://n-ost.org/agency#products" class="color-default">Our products</a></li>
-                            <li><a href="http://n-ost.org/agency#portfolio" class="color-default">Portfolio</a></li>
-                            <li><a href="http://n-ost.org/agency#references" class="color-default">References</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="content">
-                        <h5><a href="http://n-ost.org/network" class="color-default">Network</a></h5>
-                        <ul class="unstyled-list">
-                            <li><a href="http://n-ost.org/network#network_filter" class="color-default">Search Journalists</a></li>
-                            <li><a href="http://n-ost.org/network#network_location" class="color-default">Location</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="content">
-                        <h5><a href="http://n-ost.org/about-us" class="color-default">About Us</a></h5>
-
-                        <ul class="unstyled-list">
-                            <li><a href="http://n-ost.org/about-us#team" class="color-default">Team</a></li>
-                            <li><a href="http://n-ost.org/about-us#board" class="color-default">Board</a></li>
-                            <li><a href="http://n-ost.org/about-us#advisory-board" class="color-default">Advisory Board</a></li>
-                            <li><a href="http://n-ost.org/about-us#patrons-and-sponsers" class="color-default">Patrons and Sponsers</a></li>
-                            <li><a href="http://n-ost.org/about-us#cooperation-partners" class="color-default">Cooperation Partners</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /sub-footer -->
-
-        <footer class="contentbox footer border-bottom">
-            <div class="row text-uppercase">
-                <div class="col">
-                    <div class="content align-center">
-                        <a href="/"><img src="{{ url('static', filename='img/n-ost_logo_230.png') }}" alt="n-ost Logo" width="115"/></a>            
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="content">
-                        <address>
-                            Alexandrinenstraße 2-3<br>
-                            Aufgang C<br>
-                            D-10969 Berlin
-                        </address>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="content">
-                        <a href="tel:+493025932830" class="color-default">Tel. +49–(0)30–2593283–0</a>
-                        <a href="tel:+4930259328324" class="color-default">Fax +49–(0)30–2593283–24</a>
-                        <a class="js-email-link" rel="nofollow" href="mail [at] n-ost.org" data-target="mail[at]n-ost.org">mail&#064;n-ost.org</a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="content align-center social-icons">
-                        <a href="https://twitter.com/n_ost" target="_blank" class="color-default"><i class="nost-icon nost-icon-twitter"></i></a>
-                        <a href="https://www.facebook.com/nost.online" target="_blank" class="color-default"><i class="nost-icon nost-icon-facebook"></i></a>
-                        <a href="https://vimeo.com/user5178008" target="_blank" class="color-default"><i class="nost-icon nost-icon-vimeo"></i></a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+					<!-- Sponsor & Partner Section -->
+					<section id="partner">
+						<div class="contentbox">	
+							<div class="row">
+								<span class="description"><strong>n-vestigate</strong> is a joined project by</span>
+							</div><div class="row">
+								<div>
+									<a href="https://irrp.org.ua/" title="RDPI"><img src="http://www.n-vestigate.net/wp-content/uploads/2017/03/n-vestigate_partner_1.png" alt=""></a>
+								</div>
+								<div>
+									<a href="http://hetq.am" title="hetq"><img src="http://www.n-vestigate.net/wp-content/uploads/2017/03/n-vestigate_partner_2.png" alt=""></a>
+								</div>
+								<div>
+									<a href="https://www.rise.md" title="RISE Moldavia"><img src="http://www.n-vestigate.net/wp-content/uploads/2017/03/n-vestigate_partner_3.png" alt=""></a>
+								</div>
+								<div>
+									<a href="http://liberali.ge/" title="Liberali"><img src="http://www.n-vestigate.net/wp-content/uploads/2017/03/n-vestigate_partner_4.png" alt=""></a>
+								</div>
+								<div>
+									<a href="http://www.n-ost.org/" title="n-ost"><img src="http://www.n-vestigate.net/wp-content/uploads/2017/04/n-vestigate_partner_5.png" alt=""></a>
+								</div>
+							</div>
+						</div>
+					</section>
+						
+					<section id="sponsor" >
+						<div class="contentbox">	
+							<div class="row">
+								<div class="inner">		
+								<p class="description"><strong>n-vestigate</strong> is supported by</p>
+									<div>
+										<a href="http://www.bmz.de/de/index.html" title="BMZ"><img src="http://www.n-vestigate.net/wp-content/uploads/2017/03/n-vestigate_foerderer_bmz.png" alt=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section> <!-- END Sponsor & Partner Section -->
+			
+		<!-- Begin Footer -->
+		<footer> 
+			<div class="contentbox">
+				<div class="row">	
+				  <div class="copyright">&copy; 2017 n-vestigate</div>
+					<div class="imprint align-right">
+						<a href="http://www.n-vestigate.net/impressum/" target="_blank">Imprint</a></li>
+					</div>
+				</div>
+			</div>
+		</footer> <!-- End Footer --> 
+		
 
         <script src="{{ url('static', filename='js/jquery-1.11.3.min.js') }}"></script>
         <script src="{{ url('static', filename='js/build.min.js') }}"></script>
