@@ -5,6 +5,15 @@ $(document).ready(function() {
         }
     );
 
+    if ($("#form_status_popup").size()) {
+        $.magnificPopup.open({
+            items: {
+                src: '#form_status_popup',
+                type: 'inline'
+            }
+        });
+    }
+
     function escapeRegExp(str) {
         return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
     }

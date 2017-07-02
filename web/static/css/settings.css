@@ -56,3 +56,23 @@ table.dataTable thead th, table.dataTable thead td {
 .white-popup div.input {
     margin-bottom: 10px;
 }
+
+.mfp-close {
+    margin: 10px;
+}
+
+.white-popup textarea {
+    padding: 10px;
+}
+
+.white-popup h1 {
+    font-size: 25px;
+}
+
+.white-popup h1.success {
+    color: darkgreen;
+}
+
+.white-popup h1.error {
+    color: darkred;
+}

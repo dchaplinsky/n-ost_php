@@ -1,0 +1,8 @@
+<?php
+    define("CLIENT_SECRET", '');
+    define("SPREADSHEET_ID", '');
+    define("DEBUG", false);
+    define("STATIC_FOLDER", "/static");
+    define("CACHE_TIME", 3600 * 4);
+    define("RECAPTCHA_SECRET", '');
+    define("FEEDBACK_EMAIL", "");

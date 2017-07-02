@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="{{ url('static', filename='css/settings.css') }}" />
 
 	<script src="{{ url('static', filename='js/modernizr-3.2.0.base.js') }}"></script>
-
+    <script src='https://www.google.com/recaptcha/api.js?hl={{ lang }}'></script>
 </head>
 <body>
     <div class="wrapper">
@@ -40,6 +40,24 @@
             <div class="contentbox bg-color-orange">
                 <div class="row">
                     <div class="col hero-slogan">
+                        {% if form_status %}
+                            <div id="form_status_popup" class="mfp-hide white-popup">
+                                {% if lang == "en" %}
+                                    {% if form_status == "success" %}
+                                        <h1 class="success">Your message has been sent successfully</h1>
+                                    {% else %}
+                                        <h1 class="error">Cannot send your message, make sure you've clicked captcha</h1>
+                                    {% endif %}
+                                {% else %}
+                                    {% if form_status == "success" %}
+                                        <h1 class="success">Ваше сообщение было успешно отправлено</h1>
+                                    {% else %}
+                                        <h1 class="error">Ваше сообщение не может быть отправлено, будьте добры, убедитесь, что вы прошли Captcha</h1>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
                         {# Poor's man i18n #}
                         {% if lang == "en" %}
 							<h1>n-vestigate Metabase</h1>
@@ -93,8 +111,9 @@
                         <button id="jsContacts" class="btn load-more" title="Help" href="#contactUsForm">Still need help?</button>
 						
                         <div id="contactUsForm" class="mfp-hide white-popup">
-                            <form method="post" accept-charset="utf-8" class="toggle-flyout active" action="/">
-                                <input type="hidden" name="_method" value="POST">
+                            <form method="post" accept-charset="utf-8" class="toggle-flyout active" action="/need_help">
+                                <input type="hidden" name="lang" value="{{ lang }}"/>
+                            {% if lang == "en" %}
                                 <h2>Contact us</h2>
                                 <p>
                                     You want to contact the HelpDesk to get support with searching one of the databases listed above, to send us feedback on the database, or you have another concern? Please provide your name, contact information, country, media outlet(s) and your personal request. In order to speed up our service, please answer to one brief question in the contact form.
@@ -106,17 +125,59 @@
                                     <input type="email" name="email" placeholder="Email " required="required">
                                 </div>
                                 <div class="input text required">
+                                    <input type="text" name="country" placeholder="Country ">
+                                </div>
+                                <div class="input text required">
                                     <input type="text" name="media_outlet" placeholder="Media outlet ">
                                 </div>
                                 <div class="input text required">
                                     <select name="question" placeholder="Question ">
-                                        <option>I found a register I want to search and now I need help to use it.</option>
-                                        <option>I don´t find the resources I was hoping to find.</option>
-                                        <option>I would like to suggest a new source of data for metabase that is not listed here yet.</option>
-                                        <option>Other</option>
+                                        <option value="need_help">I found a register I want to search and now I need help to use it.</option>
+                                        <option value="cannot_find">I don´t find the resources I was hoping to find.</option>
+                                        <option value="can_propose">I would like to suggest a new source of data for metabase that is not listed here yet.</option>
+                                        <option value="other">Other</option>
                                     </select>
                                 </div>
+                                <div class="input text required">
+                                    <textarea name="freetext" placeholder="Your text " rows="5"></textarea>
+                                </div>
+                                <div class="input text required">
+                                    <div class="g-recaptcha" data-sitekey="6Ld-qicUAAAAALkbLUSvXl21iir58cLykJcBA_pH"></div>
+                                </div>
                                 <div><button>Submit</button></div>
+                            {% else %}
+                                <h2>Обратная связь</h2>
+                                <p>
+                                    Вы хотите связаться с HelpDesk, чтобы получить поддержку с поиском в одной из баз данных, поделиться с нами отзывом о работе с метабазой или иной информацией? Пожалуйста, вместе с вашим вопросом/ комментарием укажите свои имя, контакт, страну и  СМИ. Чтобы улучшить работу метабазы, пожалуйста, ответьте на короткий вопрос внизу формы обратной связи.
+                                </p>
+                                <div class="input text required">
+                                    <input type="text" name="name" placeholder="Имя и Фамилия " required="required">
+                                </div>
+                                <div class="input text required">
+                                    <input type="email" name="email" placeholder="e-mail " required="required">
+                                </div>
+                                <div class="input text required">
+                                    <input type="text" name="country" placeholder="Страна ">
+                                </div>
+                                <div class="input text required">
+                                    <input type="text" name="media_outlet" placeholder="СМИ ">
+                                </div>
+                                <div class="input text required">
+                                    <select name="question" placeholder="Вопрос ">
+                                        <option value="need_help">Я нашёл/ нашла нужную базу данных, и теперь мне нужна помощь в работе с ней</option>
+                                        <option value="cannot_find">Я не нашёл/ нашла нужную базу данных</option>
+                                        <option value="can_propose">Я могу предложить новую базу данных, которой пока ещё нет в метабазе</option>
+                                        <option value="other">Другое</option>
+                                    </select>
+                                </div>
+                                <div class="input text required">
+                                    <textarea name="freetext" placeholder="Ваш текст " rows="5"></textarea>
+                                </div>
+                                <div class="input text required">
+                                    <div class="g-recaptcha" data-sitekey="6Ld-qicUAAAAALkbLUSvXl21iir58cLykJcBA_pH"></div>
+                                </div>
+                                <div><button>Submit</button></div>
+                            {% endif %}
                             </form>
                         </div>
 						
