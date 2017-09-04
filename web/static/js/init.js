@@ -44,7 +44,7 @@ $(document).ready(function() {
                 "targets": 2
             },
             {
-                "width": "20%",
+                "width": "10%",
                 "orderable": false,
                 "targets": 3
             },
@@ -54,7 +54,7 @@ $(document).ready(function() {
                 "targets": 4
             },
             {
-                "width": "15%",
+                "width": "25%",
                 "orderable": false,
                 "targets": 5
             }

@@ -597,7 +597,6 @@ a:hover {
 }
 
 .contentbox.header .lang-switch-user-box {
-    display: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -614,8 +613,8 @@ a:hover {
 
 .contentbox.header .lang-switch-user-box .lang-switch a {
     color: #999;
-    margin-right: -20px;
-    padding: 12px 20px 12px 0
+    margin-right: -10px;
+    padding: 12px 20px 12px 10px
 }
 
 .contentbox.header .lang-switch-user-box .lang-switch a:hover {
@@ -2142,6 +2141,12 @@ article .contacts-container .form-inline {
     article .btn.horizontal {
         margin: 30px 0
     }
+    article a.btn {
+		border: 1px solid #fff;
+		color: #fff;
+		text-decoration: none;
+        padding: 0 50px
+    }
     article .hero-slogan h1 {
         padding: 20px 0 30px
     }
@@ -2248,7 +2253,7 @@ article .contacts-container .form-inline {
 @media (min-width:992px) {
     .contentbox>.row {
         width: 970px;
-        padding: 0 30px;
+        padding: 0 15px;
     }
     .contentbox>.row.tabs-header {
         background-color: #f6f5f2;
@@ -2332,7 +2337,7 @@ article .contacts-container .form-inline {
         margin-bottom: 0
     }
     .contentbox.header .lang-switch-user-box {
-        right: 30px
+        right: 0
     }
     .contentbox.sub-footer .col {
         border-bottom: 0 none;
@@ -3069,5 +3074,23 @@ form .error-message {
 @media (min-width:992px) {
     .modal-dialog {
         width: 900px
+    }
+}
+
+@media (max-width: 992px) {
+    .contentbox.header .lang-switch-user-box .lang-switch {
+        margin: 11px 0 0 0;
+    }
+    .hero-slogan {
+        padding: 0 15px 25px 15px;
+    }
+    #reg-description {
+        padding: 35px 15px 0 15px;
+    }
+    #partner, #sponsor {
+        padding: 60px 15px 20px 15px;
+    }
+    footer {
+        padding: 20px 15px 25px 15px;
     }
 }
